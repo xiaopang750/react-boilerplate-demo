@@ -8,26 +8,17 @@ if (!_.includes(['production', 'smoke', 'staging', 'local', 'test'], env)) {
 
 console.log(`env ${env}`);
 
+let staticPort = 9000;
 let cfg = {
   port: 5555,
+  staticPort,
   env,
   orgEnv,
   metrics: {
     host: '192.168.1.26'
   },
-  recommend: {
-    mongo: {
-      host: ['qiguo_root:qiGuo3434@192.168.1.39:27017', '192.168.1.40:27017'],
-      replicaSet: 'foba',
-      defaultGroup: 'a'
-    }
-  },
-  weixinInfo: {
-    appid: 'wx8fe3e3dab38d483d',
-    secret: '266190d5092c773f17283ebf6d882838'
-  },
   staticMaxage: 3600 * 24 * 30 * 1000,
-  staticPath: env !== 'local' ? 'http://newcdn.tvall.cn/wishing/' : '/'
+  staticPath: env !== 'local' ? 'http://cdn.cn/' : `http://localhost:${staticPort}/`
 };
 
 let overrideConfig = require(`./${env}`);

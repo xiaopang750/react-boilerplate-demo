@@ -76,8 +76,7 @@ let webpackConfig = {
     }),
     extractStylus,
     new CopyWebpackPlugin([
-      {from: `${rootDir}/static/externals`, to: `${rootDir}/build/externals`},
-      {from: `${rootDir}/static/MP_verify_ric4gb5vmbsjqzKZ.txt`}
+      {from: `${rootDir}/static/externals`, to: `${rootDir}/build/externals`}
     ]),
     webpackIsomorphicToolsPlugin,
 

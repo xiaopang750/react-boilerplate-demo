@@ -1,6 +1,6 @@
 let postcss = require('postcss');
 
-const SCALE = 75;
+const SCALE = 221.6;
 
 const convertQpxToRem = ({value, scale}) =>
   value.replace(/\d+qpx/gi, (number) => {

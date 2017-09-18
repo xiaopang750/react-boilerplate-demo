@@ -1,13 +1,15 @@
 import {combineReducers} from 'redux';
-import videoLists from './components/videoLists';
-import detail from './components/detail';
+import Tabs from './components/Tabs';
+import AgentLists from './components/AgentLists';
+import History from './components/History';
 
-let {constants: {NAME: videoListsName}, reducer: videoListsReducer} = videoLists;
-let {constants: {NAME: detailName}, reducer: detailReducer} = detail;
-
+let {constants: {NAME: bordsName}, reducer: bordsReducer} = Tabs;
+let {constants: {NAME: agentListsName}, reducer: agentListsReducer} = AgentLists;
+let {constants: {NAME: historyName}, reducer: historyReducer} = History;
 const rootReducer = combineReducers({
-  [videoListsName]: videoListsReducer,
-  [detailName]: detailReducer
+  [bordsName]: bordsReducer,
+  [agentListsName]: agentListsReducer,
+  [historyName]: historyReducer
 });
 
 export default rootReducer;
