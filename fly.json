@@ -1,0 +1,62 @@
+{
+  "serverList": {
+    "staging": [
+      {
+        "host": "192.168.1.4",
+        "username": "root"
+      }
+    ],
+    "smoke": [
+      {
+        "host": "192.168.1.50",
+        "username": "root",
+        "lbsIds": [
+          "lb-tzx0p97l",
+          "lb-yqowj5is"
+        ],
+        "lbBackIds": [
+          "lbb-y1zgrh9i",
+          "lbb-iblv31dy"
+        ]
+      },
+      {
+        "host": "192.168.1.51",
+        "username": "root",
+        "lbsIds": [
+          "lb-tzx0p97l",
+          "lb-yqowj5is"
+        ],
+        "lbBackIds": [
+          "lbb-kgabj60f",
+          "lbb-0nsmiul7"
+        ]
+      }
+    ],
+    "production": [
+      {
+        "host": "192.168.1.28",
+        "username": "root",
+        "lbsIds": [
+          "lb-tzx0p97l",
+          "lb-yqowj5is"
+        ],
+        "lbBackIds": [
+          "lbb-3uczbjpk",
+          "lbb-1vtzvzut"
+        ]
+      },
+      {
+        "host": "192.168.1.29",
+        "username": "root",
+        "lbsIds": [
+          "lb-tzx0p97l",
+          "lb-yqowj5is"
+        ],
+        "lbBackIds": [
+          "lbb-7wvmoe7i",
+          "lbb-f92hqolu"
+        ]
+      }
+    ]
+  }
+}

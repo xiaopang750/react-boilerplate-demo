@@ -1,0 +1,41 @@
+html
+  head
+    title
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+    - if (pageInfo.env !== 'local')
+      link(rel="stylesheet", type="text/css", href=staticHashMap.styles.index)
+  body
+    div#root
+    script(src=pageInfo.staticPath + "externals/flex.js")
+    script
+      | var pageInfo = !{JSON.stringify(pageInfo)};
+    - if (pageInfo.env !== 'local')
+      script(src=staticHashMap.javascript.common)
+      script(src=staticHashMap.javascript.index)
+    - else
+      script(src="/common.bundle.js")
+      script(src="/index.bundle.js")
+    script.
+      !function (key, params) {
+        var w = window, d = document, _fd = w._fd = w._fd || [], methods = ["pageView", "event", "event2app", "autoEvent2app", "setUserInfo", "setContentInfo", "setParams"]
+        var fac = function (t) {
+          return function () {
+            var e = Array.prototype.slice.call(arguments)
+            e.unshift(t)
+            _fd.push(e)
+            return _fd
+          }
+        }
+        for (var t = 0; t < methods.length; t++) {
+          var e = methods[t]
+          _fd[e] = fac(e)
+        }
+        _fd.setParams(params)
+        var g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+        g.type = 'text/javascript'
+        g.async = true
+        g.defer = true
+        g.src = '//sdk.firedata.cc/js/' + key + '.js'
+        s.parentNode.insertBefore(g, s)
+      }('TVAPKJF6OH')
+      window._fd && _fd.setUserInfo({'id': (window.wpa && window.wpa.getGuid && window.wpa.getGuid()) || ''})
